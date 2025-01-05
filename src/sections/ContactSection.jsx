@@ -1,0 +1,49 @@
+import React from "react";
+import ContactForm from "../components/ContactForm";
+import { RevealText } from "../components/RevealText";
+import { motion } from "framer-motion";
+import ShinnyLine from "../components/ShinnyLine";
+function ContactSection() {
+  return (
+    <section className="flex flex-col gap-4 p-4 lg:ml-14" id="contact">
+      <div className="font-bold text-3xl uppercase flex gap-3 flex-col justify-center items-center">
+        <RevealText text={"Contact"} />
+      </div>
+      {/* shinny line animation  */}
+      <ShinnyLine />
+      <div className="flex gap-4">
+        <motion.div className="hidden lg:block space-y-6 lg:w-1/2 text-8xl text-center opacity-50">
+          <span>
+            <motion.span
+              className="inline-block"
+              initial={{ x: -30 }}
+              whileInView={{ x: 0 }}
+            >
+              {"<"}
+            </motion.span>
+            <motion.span
+              className="inline-block"
+              initial={{ x: 30 }}
+              whileInView={{ x: 0 }}
+            >
+              {"/>"}
+            </motion.span>
+          </span>
+          
+            <h1 className="text-5xl font-bold text-gray-100 md:text-6xl">
+              Let’s Talk
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 px-40">
+              Got a project idea or a question? Drop your message in the contact
+              form and share your email so we can connect!
+            </p>
+       
+        </motion.div>
+
+        <ContactForm />
+      </div>
+    </section>
+  );
+}
+
+export default ContactSection;
