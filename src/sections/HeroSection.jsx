@@ -41,15 +41,10 @@ function HeroSection() {
         dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
         className="relative flex flex-col justify-center items-center py-10"
       >
-        <motion.span
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-5xl md:text-7xl absolute top-10 -left-2 md:-left-20 lg:left-0 xl:left-40 2xl:left-[40rem]"
-        >
-          {"<"}
-        </motion.span>
+       
 
         <motion.div className=" w-full md:w-[50rem] flex flex-col justify-center items-center my-5">
+      
           <div className="flex flex-wrap gap-3 justify-center">
             <RevealText text={"MERN"} />
             <RevealText text={"STACK"} />
@@ -65,17 +60,31 @@ function HeroSection() {
             portfolio showcases diverse projects that combine clean code,
             intuitive design, and modern development principles.
           </p>
-          <div className="self-start p-6">
-            <ShinyButton />
-          </div>
-        </motion.div>
-        <motion.span
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-5xl md:text-7xl absolute bottom-10 right-10 md:-right-10 lg:right-0 xl:right-52 2xl:right-[40rem]"
+          <div className="self-start flex justify-center items-center p-6">
+          <motion.span
+          initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+          className="text-5xl pb-4 md:text-7xl ">
+        
+          {"<"}
+        </motion.span>
+           <motion.span 
+           initial={{ opacity: 0, y: -100 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5 ,delay: 0.6,type: "spring" }}
+           > <ShinyButton /></motion.span>
+            <motion.span
+          initial={{ opacity: 0,x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 ,delay: 0.5,type: "spring" }}
+          className="text-5xl md:text-7xl "
         >
           {"/>"}
         </motion.span>
+          </div>
+          
+        </motion.div>
+       
       </motion.div>
     </section>
   );

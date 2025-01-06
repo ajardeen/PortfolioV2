@@ -11,7 +11,7 @@ function ContactSection() {
       </div>
       {/* shinny line animation  */}
       <ShinnyLine />
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex justify-center items-center gap-4 p-3">
         <motion.div className="hidden lg:block space-y-6 lg:w-1/2 text-8xl text-center opacity-50">
           <span>
             <motion.span
@@ -40,7 +40,7 @@ function ContactSection() {
        
         </motion.div>
 
-        <ContactForm />
+       <ContactForm />
       </div>
     </section>
   );
