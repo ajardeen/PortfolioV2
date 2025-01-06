@@ -39,7 +39,7 @@ function ProjectsSection() {
           visible: { opacity: 1, transition: { duration: 1, delay: 0.2 } },
         }}
         onViewportEnter={handleReveal}
-        className="flex-col flex xl:flex-row justify-around items-center gap-4 my-10"
+        className="flex-col flex lg:flex-row justify-around items-center gap-4 my-10"
       >
         {reveal && (
           <motion.span
@@ -78,7 +78,7 @@ function ProjectsSection() {
           visible: { opacity: 1, transition: { duration: 1, delay: 0.2 } },
         }}
         onViewportEnter={handleReveal}
-        className="flex-col flex xl:flex-row justify-around items-center gap-4 my-10"
+        className="flex-col flex lg:flex-row justify-around items-center gap-4 my-10"
       >
         <ProjectExpandableCard
           title={stateProjects[1].title}

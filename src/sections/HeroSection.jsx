@@ -44,7 +44,7 @@ function HeroSection() {
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-5xl md:text-7xl absolute top-10 -left-2 md:-left-20 lg:left-0 xl:left-96"
+          className="text-5xl md:text-7xl absolute top-10 -left-2 md:-left-20 lg:left-0 xl:left-40 2xl:left-[40rem]"
         >
           {"<"}
         </motion.span>
@@ -72,7 +72,7 @@ function HeroSection() {
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-5xl md:text-7xl absolute bottom-10 right-10 md:-right-10 lg:right-0 xl:right-96"
+          className="text-5xl md:text-7xl absolute bottom-10 right-10 md:-right-10 lg:right-0 xl:right-52 2xl:right-[40rem]"
         >
           {"/>"}
         </motion.span>
