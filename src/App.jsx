@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       {/* <ShinyButton /> */}
-      <div className="text-white mt-10 poppins-medium">
+      <div className="text-white p-2 mt-10 poppins-medium ">
         <HeroSection />
         <div className="grid-background flex flex-col justify-center items-center ">
           <div className="container flex flex-col gap-20">

@@ -35,11 +35,11 @@ export default function ContactForm() {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center my-10 text-white px-6 w-[30rem]"
+      className="flex flex-col  items-center justify-center my-10 text-white px-6 w-[30rem]"
     >
       <form
         onSubmit={onSubmit}
-        className="w-full max-w-lg space-y-6 bg-white p-8 rounded-lg shadow-lg text-black"
+        className="w-full max-w-lg space-y-6 bg-white p-6 md:p-8 rounded-lg shadow-lg text-black"
       >
         <motion.div
           initial={{ opacity: 0, x: -50 }}

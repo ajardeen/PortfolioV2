@@ -64,7 +64,7 @@ function HeroSection() {
           <motion.span
           initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-          className="text-5xl pb-4 md:text-7xl ">
+          className="text-5xl pb-1 md:text-7xl ">
         
           {"<"}
         </motion.span>
@@ -77,7 +77,7 @@ function HeroSection() {
           initial={{ opacity: 0,x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 ,delay: 0.5,type: "spring" }}
-          className="text-5xl md:text-7xl "
+          className="text-4xl md:text-5xl "
         >
           {"/>"}
         </motion.span>
