@@ -29,7 +29,7 @@ const handleEmailClick = () => {
   setShowPopup(true);
   setTimeout(() => {
     setShowPopup(false);
-  }, 3000);
+  }, 5000);
 };
 
 
@@ -85,7 +85,7 @@ const handleEmailClick = () => {
             </p>
 
             <div className="flex items-center text-sm mt-4">
-              <GrLocationPin className="text-red-400  animate-bounce" />
+              <GrLocationPin size={20}  className="text-red-400  animate-bounce" />
               <span className="ml-2">
                 Thiruvamiyur | <strong>Chennai</strong>
               </span>
@@ -99,7 +99,7 @@ const handleEmailClick = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-100 text-2xl transition duration-300"
               >
-                <FaGithub />
+                <FaGithub size={25} />
               </a>
               <a
                 href="https://www.linkedin.com/in/s-mohamed-ajardeen/"
@@ -107,7 +107,7 @@ const handleEmailClick = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-100 text-2xl transition duration-300"
               >
-                <FaLinkedin />
+                <FaLinkedin size={25} />
               </a>
               <motion.button
               onClick={handleEmailClick}
@@ -157,16 +157,16 @@ const handleEmailClick = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 200 }}
             transition={{ duration: 0.3 }}
-            className="fixed flex gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-4 sm:p-6 w-full max-w-sm text-lg"
+            className="fixed flex justify-start items-center gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-4 sm:p-6 w-fit max-w-sm lg:text-lg"
           >
             <motion.span
               initial={{ opacity: 0, x: 200 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 200 }}
             >
-              <MdOutlineMarkEmailRead className="text-green-500 text-4xl" />
+              <MdOutlineMarkEmailRead className="text-green-500  text-2xl lg:text-4xl" />
             </motion.span>
-            <div className="flex justify-between items-center w-full">
+            <div className="flex  items-center w-full justify-between">
               <span>Email Copied</span>
               <button
                 onClick={() => setShowPopup(false)}

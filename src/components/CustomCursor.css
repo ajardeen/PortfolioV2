@@ -31,3 +31,8 @@
     display: inline-block;
   }
   
+  @media (max-width: 768px) {
+    .custom-cursor {
+      display: none; /* Hide the cursor on smaller screens */ 
+    }
+  }

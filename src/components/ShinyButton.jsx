@@ -58,7 +58,7 @@ const ShinyButton = () => {
       >
         <motion.span 
           layout
-          className={!click ? "text-neutral-100 flex gap-1 justify-center items-center text-lg tracking-wide font-light h-full w-full block relative linear-mask" : "text-green-500 text-lg tracking-wide font-light h-full w-full block relative linear-mask"}>
+          className={!click ? "text-neutral-100 flex gap-1 justify-start items-center text-sm lg:text-lg tracking-wide font-light h-full w-full  relative linear-mask" : "text-green-500 text-sm lg:text-lg tracking-wide font-light h-full w-full block relative linear-mask"}>
           {text} <motion.span 
           initial={{ y: -3 }}
           animate={{ y: 0 }}

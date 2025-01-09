@@ -36,7 +36,7 @@ export default function ContactForm() {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center my-10 text-white px-4 sm:px-6 md:px-8 w-full max-w-lg mx-auto"
+      className="flex flex-col items-center justify-center my-10 text-white px-4 sm:px-6 md:px-8 w-full max-w-lg mx-aut text-[9px] lg:text-base"
     >
       <form
         onSubmit={onSubmit}
@@ -112,17 +112,17 @@ export default function ContactForm() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 200 }}
             transition={{ duration: 0.3 }}
-            className="fixed flex gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-4 sm:p-6 w-full max-w-sm text-lg"
+            className="fixed flex justify-start items-center gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-4 sm:p-6   text-xs lg:text-lg"
           >
             <motion.span
               initial={{ opacity: 0, x: 200 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 200 }}
             >
-              <MdOutlineMarkEmailRead className="text-green-500 text-4xl" />
+              <MdOutlineMarkEmailRead className="text-green-500 text-2xl lg:text-4xl" />
             </motion.span>
-            <div className="flex justify-between items-center w-full">
-              <span>{result}</span>
+            <div className="flex justify-between items-center w-fit">
+              <span className="w-40 lg:w-60">{result}</span>
               <button
                 onClick={() => setShowPopup(false)}
                 className="text-black hover:text-red-700 text-4xl"
