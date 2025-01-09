@@ -1,6 +1,7 @@
 import React from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
+import "./RevealText.css";
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
@@ -16,7 +17,7 @@ const FlipLetter = ({ children, href }) => {
       animate={loaded ? "initial" : "hovered"}
       whileHover="hovered"
       href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-2xl font-black uppercase sm:text-4xl md:text-5xl lg:text-6xl"
+      className="relative block overflow-hidden whitespace-nowrap text-2xl font-black uppercase sm:text-4xl md:text-5xl lg:text-6xl hero-text"
       style={{
         lineHeight: 0.75,
       }}

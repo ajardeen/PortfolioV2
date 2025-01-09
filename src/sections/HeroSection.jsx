@@ -47,9 +47,9 @@ const handleEmailClick = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
           exit={{ opacity: 0 }}
-          className="hidden lg:flex absolute -top-10 left-[20%] items-center"
+          className="flex absolute top-4 left-[50%]  lg:left-[30%] items-center"
         >
-          <video src={arrow} autoPlay muted className="rotate-180 w-10 h-10" />
+          <video src={arrow} autoPlay muted className="rotate-180 w-12 h-12 lg:w-20 lg:h-20" />
           <h2 className="font-extrabold text-lg">It's me</h2>
         </motion.span>
       )}
@@ -64,8 +64,8 @@ const handleEmailClick = () => {
         layout
       >
         <motion.div className="w-full md:w-[50rem] flex flex-col justify-start items-start my-5">
-          <div className="hover-target border p-1">
-            <div className="flex flex-wrap gap-3 justify-start ">
+          <div className="hover-target border p-1 ">
+            <div className="flex flex-shrink gap-3 justify-start  ">
               <RevealText text={"MERN"} />
               <RevealText text={"STACK"} />
               <RevealText text={"DEVELOPER"} />

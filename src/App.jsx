@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       {/* <ShinyButton /> */}
-      <div className="text-white p-2 mx-2 mt-10 poppins-medium ">
+      <div className="text-white p-2 lg:mx-2 mt-10 poppins-medium ">
         <CustomCursor />
         <HeroSection />
         <div className="grid-background flex flex-col justify-center items-center ">
