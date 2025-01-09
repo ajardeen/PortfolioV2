@@ -40,7 +40,7 @@ function SkillsSection() {
   ];
 
   return (
-    <section className="relative flex flex-col gap-4 p-4 lg:ml-14" id="skills" 
+    <section className="relative flex flex-col gap-4 p-4" id="skills" 
    
     >
 

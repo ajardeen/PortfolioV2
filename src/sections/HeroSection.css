@@ -1,10 +1,48 @@
 .hero-section {
-    --dot-bg: black;
-    --dot-color: white;
-    --dot-size: 1px;
-    --dot-space: 22px;
-      background:
-          linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-          linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-          var(--dot-color);
+  --dot-bg: black;
+  --dot-color: white;
+  --dot-size: 1px;
+  --dot-space: 22px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  
+
+  /* Dot Pattern */
+  background: linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+}
+
+/* Moving Overlay */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%; /* Start off-screen */
+  width: 50%; /* Large enough to cover the section */
+  height: 150%;
+  background: linear-gradient(to right, transparent, white,white);
+  mix-blend-mode: overlay; /* Blend the overlay with the dots */
+  animation: color-slide 6s linear infinite;
+}
+
+@keyframes color-slide {
+  0% {
+    opacity: 0.8;
+    transform: translateX(-1000);
   }
+  100% {
+    opacity: 1;
+    transform: translateX(400%);
+  }
+}

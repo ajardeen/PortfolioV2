@@ -1,0 +1,33 @@
+/* Hide the default cursor */
+* {
+    cursor: none;
+  }
+  
+  /* Custom cursor styles */
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25px; /* Default size */
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.2s ease, height 0.2s ease; /* Smooth size change */
+  }
+  
+  /* When hovering over target elements */
+  .custom-cursor.hover-active {
+    width: 100px; /* Enlarged size */
+    height: 100px;
+  }
+  
+  /* Add styles for target elements */
+  .hover-target {
+    position: relative;
+    display: inline-block;
+  }
+  

@@ -7,12 +7,14 @@ import SkillsSection from "./sections/SkillsSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import ContactSection from "./sections/ContactSection";
 import Footer from "./components/Footer";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   return (
     <>
       {/* <ShinyButton /> */}
-      <div className="text-white p-2 mt-10 poppins-medium ">
+      <div className="text-white p-2 mx-2 mt-10 poppins-medium ">
+        <CustomCursor />
         <HeroSection />
         <div className="grid-background flex flex-col justify-center items-center ">
           <div className="container flex flex-col gap-20">

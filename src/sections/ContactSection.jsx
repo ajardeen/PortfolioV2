@@ -5,19 +5,20 @@ import { motion } from "framer-motion";
 import ShinnyLine from "../components/ShinnyLine";
 function ContactSection() {
   return (
-    <section className="flex flex-col gap-4 p-4 lg:ml-14" id="contact">
+    <section className="flex flex-col gap-4 p-4 " id="contact">
       <div className="font-bold text-3xl uppercase flex gap-3 flex-col justify-center items-center">
         <RevealText text={"Contact"} />
       </div>
       {/* shinny line animation  */}
       <ShinnyLine />
-      <div className="flex justify-center items-center gap-4 p-3">
-        <motion.div className="hidden lg:block space-y-6 lg:w-[40%] text-8xl text-center opacity-50">
+      <div className="flex justify-evenly items-center gap-4 lg:p-3">
+        <motion.div className="hidden lg:block space-y-6 lg:w-[50%] text-8xl text-center opacity-50">
           <span>
             <motion.span
               className="inline-block"
               initial={{ x: -30 }}
               whileInView={{ x: 0 }}
+              transition={{ delay: 0.2,duration: 0.5 }}
             >
               {"<"}
             </motion.span>
@@ -25,6 +26,7 @@ function ContactSection() {
               className="inline-block"
               initial={{ x: 30 }}
               whileInView={{ x: 0 }}
+              transition={{ delay: 0.2,duration: 0.5 }}
             >
               {"/>"}
             </motion.span>
@@ -40,7 +42,9 @@ function ContactSection() {
        
         </motion.div>
 
+       <div className="w-full lg:w-1/2 flex justify-center items-center">
        <ContactForm />
+       </div>
       </div>
     </section>
   );

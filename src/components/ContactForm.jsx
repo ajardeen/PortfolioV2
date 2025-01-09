@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
+
 export default function ContactForm() {
   const [result, setResult] = React.useState("");
   const [showPopup, setShowPopup] = React.useState(false);
@@ -20,7 +21,7 @@ export default function ContactForm() {
     const data = await response.json();
 
     if (data.success) {
-    setResult("Thank you! I'm so glad you reached out to me!");
+      setResult("Thank you! I'm so glad you reached out to me!");
       setShowPopup(true);
       event.target.reset();
     } else {
@@ -35,11 +36,11 @@ export default function ContactForm() {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col  items-center justify-center my-10 text-white px-6 w-[30rem]"
+      className="flex flex-col items-center justify-center my-10 text-white px-4 sm:px-6 md:px-8 w-full max-w-lg mx-auto"
     >
       <form
         onSubmit={onSubmit}
-        className="w-full max-w-lg space-y-6 bg-white p-6 md:p-8 rounded-lg shadow-lg text-black"
+        className="w-full space-y-6 bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg text-black"
       >
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -111,15 +112,16 @@ export default function ContactForm() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 200 }}
             transition={{ duration: 0.3 }}
-            className="fixed flex gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-6 w-96 text-lg"
+            className="fixed flex gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-4 sm:p-6 w-full max-w-sm text-lg"
           >
-            <motion.span 
-            initial={{ opacity: 0, x: 200 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 200 }}
-            ><MdOutlineMarkEmailRead  className="text-green-500 text-4xl"/>
+            <motion.span
+              initial={{ opacity: 0, x: 200 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 200 }}
+            >
+              <MdOutlineMarkEmailRead className="text-green-500 text-4xl" />
             </motion.span>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center w-full">
               <span>{result}</span>
               <button
                 onClick={() => setShowPopup(false)}

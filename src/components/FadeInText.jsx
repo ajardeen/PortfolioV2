@@ -23,7 +23,7 @@ function FadeInText({ desc, techStacks, demoUrl, codeUrl }) {
         whileInView="reveal"
         viewport={{ once: true }}
         transition={{ staggerChildren: 0.01 }}
-        className="text-xs md:text-sm lg:text-base"
+        className="text-xs md:text-sm lg:text-base leading-5 opacity-80"
       >
         {characters.map((char, index) => (
           <motion.span
@@ -71,12 +71,12 @@ function FadeInText({ desc, techStacks, demoUrl, codeUrl }) {
             onMouseLeave={() => setIsDemoHovered(false)}
             className="flex justify-center items-center gap-1"
           >
-            <FaCode className="text-5xl hover:text-slate-300 cursor-pointer" />
+            <FaCode className="text-2xl lg:text-5xl hover:text-slate-300 cursor-pointer" />
             <motion.div
               initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className={`bg-black text-white p-2 rounded-md cursor-pointer `}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8,delay:0.5 }}
+              className={`bg-black  text-sm lg:text-lg text-white p-2 rounded-md cursor-pointer `}
             >
               Demo
             </motion.div>
@@ -94,13 +94,13 @@ function FadeInText({ desc, techStacks, demoUrl, codeUrl }) {
             onMouseLeave={() => setIsGitHubHovered(false)}
             className="flex justify-center items-center gap-1"
           >
-            <IoLogoGithub className="text-5xl hover:text-slate-300 cursor-pointer" />
+            <IoLogoGithub className="text-2xl lg:text-5xl text-slate-300 cursor-pointer" />
 
             <motion.div
               initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className={`bg-black text-white p-2 rounded-md cursor-pointer `}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8,delay:0.5 }}
+              className={`bg-black text-sm lg:text-lg text-white p-2 rounded-md cursor-pointer `}
             >
               GitHub
             </motion.div>
