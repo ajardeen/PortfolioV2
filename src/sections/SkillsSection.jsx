@@ -11,30 +11,28 @@ import {
   DiMongodb, 
   DiGit, 
   DiGithubBadge,
+  DiRedis,
 } from "react-icons/di";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import { SiTailwindcss, SiPostman, SiSelenium, SiSpringboot, SiMysql, SiPython } from "react-icons/si";
+import { SiTailwindcss, SiPostman, SiSelenium, SiSpringboot, SiMysql, SiPython, SiRedux } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import ShinnyLine from "../components/ShinnyLine";
 
 const size = 50;
 function SkillsSection() {
   const skills = [
-    { name: "JavaScript", icon: <DiJavascript1 size={size}/> },
     { name: "React", icon: <DiReact size={size}/> },
+    { name: "Redux", icon: <SiRedux size={size}/> },
+    { name: "JavaScript", icon: <DiJavascript1 size={size}/> },
     { name: "Tailwindcss", icon: <SiTailwindcss size={size}/> },
     { name: "HTML", icon: <DiHtml5 size={size}/> },
     { name: "CSS", icon: <DiCss3 size={size}/> },
     { name: "Nodejs", icon: <DiNodejs size={size}/> },
     { name: "Express.js", icon: <DiNodejs size={size}/> }, // Using Node.js icon for Express.js
     { name: "MongoDB", icon: <DiMongodb size={size}/> },
-    { name: "Postman", icon: <SiPostman size={size}/> },
-    { name: "Selenium", icon: <SiSelenium size={size}/> },
-    { name: "Motion", icon: <TbBrandFramerMotion size={size}/> },
     { name: "Git", icon: <DiGit size={size}/> },
     { name: "GitHub", icon: <DiGithubBadge size={size}/> },
     { name: "coreJava", icon: <FaJava size={size}/> },
-    { name: "SpringBoot", icon: <SiSpringboot size={size}/> },
     { name: "MySQL", icon: <SiMysql size={size}/> },
     { name: "Python", icon: <SiPython size={size}/> },
   ];
