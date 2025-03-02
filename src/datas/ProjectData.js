@@ -3,16 +3,15 @@ import hostel2 from "../assets/hostel2.png";
 import hostel3 from "../assets/hostel3.png";
 import hostel4 from "../assets/hostel4.png";
 import hostel5 from "../assets/hostel5.png";
-import college1 from "../assets/college1.png";
 import college2 from "../assets/college2.png";
 import college3 from "../assets/college3.png";
-import college4 from "../assets/college4.png";
 import college5 from "../assets/college5.png";
 
 export const projects = [
   {
     title: "Hostel Management System",
-    codeUrl: "https://github.com/ajardeen/Hostel-Management-Frontend",
+    frontEndCodeUrl: "https://github.com/ajardeen/Hostel-Management-Frontend",
+    backEndCodeUrl: "https://github.com/ajardeen/Hostel_Management_Backend",
     demoUrl: "https://hosteledge-management-system-ajar.netlify.app/",
     desc: "A full-featured system for efficient hostel operations, including room allocation, maintenance requests, billing, resident management, and financial reporting. It streamlines workflows and enhances user experience for administrators, staff, and residents.",
     techStacks: [
@@ -36,8 +35,9 @@ export const projects = [
     ],
   },
   {
-    title: "College Placement Management System",
-    codeUrl: "https://github.com/ajardeen/College-Placement-Management-FrontEnd",
+    title: "Placement Management System",
+    frontEndCodeUrl: "https://github.com/ajardeen/College-Placement-Management-FrontEnd",
+    backEndCodeUrl: "https://github.com/ajardeen/College-Placement-Management-Backend",
     demoUrl: "https://college-placement-system-ajar.netlify.app/home",
     desc: "A platform to streamline college placements, handling student applications, interview scheduling, company coordination, and detailed reporting. Built with MERN stack and TailwindCSS, it integrates tools like Zoom API for seamless functionality.",
     techStacks: [
@@ -49,9 +49,8 @@ export const projects = [
       "NodeMailer",
       "Framer Motion",
       "Axios",
-      "HeroIcons",
     ],
-    images: [college1, college2, college3, college4, college5],
+    images: [ college2, college3, college5],
     data: [
       { title: "Application Management", features: ["Submit applications and track statuses."] },
       { title: "Interview Scheduling", features: ["Schedule and manage interviews with notifications."] },

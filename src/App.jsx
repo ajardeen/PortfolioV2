@@ -13,13 +13,11 @@ function App() {
   return (
     <>
       {/* <ShinyButton /> */}
-      <div className="text-white p-2 lg:mx-2 mt-10 poppins-medium ">
+      <div className="text-white p-2 lg:mx-2 mt-1 poppins-medium ">
         <CustomCursor />
         <HeroSection />
         <div className="grid-background flex flex-col justify-center items-center ">
           <div className="container flex flex-col gap-20">
-            
-          
             <SkillsSection />
             <ProjectsSection />
             

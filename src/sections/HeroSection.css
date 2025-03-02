@@ -33,7 +33,7 @@
   height: 150%;
   background: linear-gradient(to right, transparent, white,white);
   mix-blend-mode: overlay; /* Blend the overlay with the dots */
-  animation: color-slide 6s linear infinite;
+  animation: color-slide 10s linear infinite;
 }
 
 @keyframes color-slide {

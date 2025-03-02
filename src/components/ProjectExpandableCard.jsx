@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import ProjectOverlayText from "./ProjectOverlayText";
 
 function ProjectExpandableCard({
   title,
@@ -9,12 +10,14 @@ function ProjectExpandableCard({
   techStacks,
   images,
   data,
-  codeUrl,
+  frontEndCodeUrl,
+  backEndCodeUrl,
   demoUrl,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [hide, setHide] = useState(false);
+  const [showGithubLinks, setShowGithubLinks] = useState(false);
 
   const nextImage = (e) => {
     e.stopPropagation();
@@ -32,6 +35,11 @@ function ProjectExpandableCard({
     setTimeout(() => setHide(true), 500);
     setHide(false);
   }, [isOpen]);
+
+  const handleGithubClick = (e) => {
+    e.stopPropagation();
+    setShowGithubLinks(!showGithubLinks);
+  };
 
   return (
     <>
@@ -73,28 +81,48 @@ function ProjectExpandableCard({
           />
 
           {/* Top-right icons */}
-          {isOpen ? (
-            <motion.div 
+          <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="absolute top-2 right-2 flex space-x-2 z-20">
-              <a
-                href={codeUrl}
-                target="_blank"
+            <div className="relative">
+              <button
                 className="text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
+                onClick={handleGithubClick}
               >
                 <FaGithub size={18} />
-              </a>
-              <a
-                href={demoUrl}
-                target="_blank"
-                className="text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
-              >
-                <FaExternalLinkAlt size={18} />
-              </a>
-            </motion.div>
-          ) : null}
+              </button>
+              {showGithubLinks && (
+                <div className="absolute right-0 mt-2 w-32 bg-black bg-opacity-90 rounded-lg shadow-lg">
+                  <a
+                    href={frontEndCodeUrl}
+                    target="_blank"
+                    className="block px-4 py-2 text-sm text-white hover:bg-slate-700"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Frontend Code
+                  </a>
+                  <a
+                    href={backEndCodeUrl}
+                    target="_blank"
+                    className="block px-4 py-2 text-sm text-white hover:bg-slate-700"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Backend Code
+                  </a>
+                </div>
+              )}
+            </div>
+            <a
+              href={demoUrl}
+              target="_blank"
+              className="text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <FaExternalLinkAlt size={18} />
+            </a>
+          </motion.div>
 
           {/* Navigation Controls */}
           <motion.div
@@ -126,29 +154,35 @@ function ProjectExpandableCard({
           </motion.div>
 
           {/* Title */}
-          <motion.span
-            className={
-              !isOpen
-                ? "absolute bottom-0 left-0 text-white bg-black w-full backdrop-blur-lg"
-                : "absolute -bottom-8 left-4 z-30"
-            }
-          >
-            <motion.h1
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: 0.5,
-                type: "spring",
-                stiffness: 100,
-              }}
-              className="font-bold text-sm md:text-2xl  uppercase"
+          {!isOpen && (
+            <motion.span
+              className="absolute bottom-0 left-0 text-white bold w-full"
             >
-              {title}
-            </motion.h1>
-          </motion.span>
+              <ProjectOverlayText text={title}/>
+            </motion.span>
+          )}
         </div>
+
+        {/* Non-expanded Content */}
+        {!isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="mt-4 text-white"
+          >
+            <p className="text-sm md:text-base mb-2 line-clamp-2">{desc}</p>
+            <div className="flex flex-wrap gap-2">
+              {techStacks.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-xs md:text-sm bg-slate-800 rounded-full text-slate-300 hover:bg-slate-700 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* Expandable Content */}
         {isOpen && (
@@ -182,13 +216,13 @@ function ProjectExpandableCard({
             <h1 className="bg-black text-white p-2 md:p-4 text-xl md:text-2xl">
               Tech Stack
             </h1>
-            <div className="bg-black text-white p-2 md:p-4 flex flex-wrap gap-1">
+            <div className="bg-black text-white p-2 md:p-4 flex flex-wrap gap-2">
               {techStacks.map((tech, index) => (
                 <span
                   key={index}
-                  className="inline-block text-slate-300 opacity-70 hover:text-white hover:opacity-100"
+                  className="px-3 py-1 bg-slate-800 rounded-full text-slate-300 hover:bg-slate-700 transition-colors"
                 >
-                  {tech},
+                  {tech}
                 </span>
               ))}
             </div>

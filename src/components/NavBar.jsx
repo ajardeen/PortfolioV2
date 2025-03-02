@@ -58,7 +58,7 @@ function NavBar() {
       animate={{ opacity: 1 }}
       whileHover={{ scale: 1.2 }}
       transition={{ duration: 0.3 }}
-      className="px-3 py-2  my-2 rounded-t-3xl text-sm fixed bottom-0 flex justify-around items-center z-30 w-72 lg:w-96 backdrop-blur-lg shadow-sm shadow-slate-700"
+      className="px-3 py-2  rounded-t-3xl text-sm fixed bottom-0 flex justify-around items-center z-30 w-72 lg:w-96 backdrop-blur-lg shadow-sm shadow-slate-700"
     >
       <div className="relative group">
         <video src={Animation} autoPlay loop muted className="w-10 h-10" />

@@ -6,11 +6,17 @@ import ShinnyLine from "../components/ShinnyLine";
 function ContactSection() {
   return (
     <section className="flex flex-col gap-4 p-4 " id="contact">
-      <div className="font-bold text-3xl uppercase flex gap-3 flex-col justify-center items-center">
-        <RevealText text={"Contact"} />
-      </div>
-      {/* shinny line animation  */}
-      <ShinnyLine />
+       {/* skill div  */}
+       <div className="flex gap-10 justify-center items-center">
+          <span className="rotate-180">
+            <ShinnyLine />
+          </span>
+          <span>
+            <RevealText text={"Contact"} />
+          </span>
+          {/* shinny line animation  */}
+          <ShinnyLine />
+        </div>
       <div className="flex justify-evenly items-center gap-4 lg:p-3">
         <motion.div className="hidden lg:block space-y-6 lg:w-[50%] text-8xl text-center opacity-50">
           <span>

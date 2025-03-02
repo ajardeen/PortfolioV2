@@ -26,11 +26,19 @@ function ProjectsSection() {
 
   return (
     <section className="relative flex flex-col gap-4 p-4" id="work">
-      <div className="flex justify-center items-center">
-        <RevealText text={"work"} />
-      </div>
-      {/* Shinny line animation */}
-      <ShinnyLine />
+      {/* skill div  */}
+      <div className="flex gap-10 justify-center items-center">
+          <span className="rotate-180">
+            <ShinnyLine />
+          </span>
+          <span>
+            <RevealText text={"Projects"} />
+          </span>
+          {/* shinny line animation  */}
+          <ShinnyLine />
+        </div>
+    
+ <div className="flex flex-wrap gap-10 justify-center">
 
       {/* Dynamically Render Projects */}
       {projects.map((project, index) => (
@@ -42,7 +50,7 @@ function ProjectsSection() {
             visible: { opacity: 1, transition: { duration: 1, delay: 0.2 } },
           }}
           onViewportEnter={handleReveal}
-          className="flex-col flex lg:flex-row justify-around items-center gap-4 my-10"
+          className=" flex justify-around items-center gap-4 my-10"
         >
           {reveal && index === 0 && ( // Show arrow only for the first project
             <motion.span
@@ -53,7 +61,7 @@ function ProjectsSection() {
               className="absolute top-20 left-[10rem] hidden lg:flex flex-col items-center justify-center"
             >
               <h2 className="font-extrabold">tap to expand me</h2>
-              <video src={arrow} autoPlay muted className="rotate-90 size-28" />
+              <video src={arrow} autoPlay muted className="rotate-45 size-28" />
             </motion.span>
           )}
 
@@ -64,19 +72,21 @@ function ProjectsSection() {
             techStacks={project.techStacks}
             images={project.images}
             data={project.data}
-            codeUrl={project.codeUrl}
+            frontEndCodeUrl={project.frontEndCodeUrl}
+            backEndCodeUrl={project.backEndCodeUrl}
             demoUrl={project.demoUrl}
           />
 
-          {/* Description and Tech Stack */}
+          {/* Description and Tech Stack
           <FadeInText
             desc={project.desc}
             techStacks={project.techStacks}
             codeUrl={project.codeUrl}
             demoUrl={project.demoUrl}
-          />
+          /> */}
         </motion.div>
       ))}
+ </div>
     </section>
   );
 }

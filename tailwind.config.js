@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}", // Adjust paths based on your folder structure
   ],
   theme: {
-    extend: {},
+    theme: {
+          extend: {
+            animation: {
+              'spin-slow': 'spin 10s linear infinite',
+            }
+          }
+        }
   },
   plugins: [],
 };

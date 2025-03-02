@@ -17,7 +17,7 @@ const FlipLetter = ({ children, href }) => {
       animate={loaded ? "initial" : "hovered"}
       whileHover="hovered"
       href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-2xl font-black uppercase sm:text-4xl md:text-5xl lg:text-6xl hero-text"
+      className="relative block overflow-hidden whitespace-nowrap text-3xl font-black uppercase  hero-text"
       style={{
         lineHeight: 0.75,
       }}
