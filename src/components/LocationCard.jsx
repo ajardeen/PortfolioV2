@@ -23,12 +23,12 @@ function LocationCard() {
   const characters = text.split("");
 
   return (
-    <motion.div className="py-4 md:w-4/5  overflow-hidden">
+    <motion.div className="py-4   md:w-4/5  overflow-hidden">
       <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="flex items-center mt-4 ">
+      className="flex items-center mt-4 pl-3">
         <div className="relative md:p-6 m-2 md:m-1">
           <img className="size-10" src={coffee} alt="coffee icon" />
 

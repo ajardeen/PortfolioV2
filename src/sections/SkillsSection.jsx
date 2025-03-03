@@ -30,9 +30,11 @@ function SkillsSection() {
     { name: "MongoDB", icon: <DiMongodb size={size} /> },
     { name: "Git", icon: <DiGit size={size} /> },
     { name: "GitHub", icon: <DiGithubBadge size={size} /> },
-    { name: "coreJava", icon: <FaJava size={size} /> },
+    // { name: "coreJava", icon: <FaJava size={size} /> },
     { name: "MySQL", icon: <SiMysql size={size} /> },
-    { name: "Python", icon: <SiPython size={size} /> },
+    // { name: "Python", icon: <SiPython size={size} /> },
+
+
   ];
 
   return (

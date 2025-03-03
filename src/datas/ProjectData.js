@@ -3,7 +3,9 @@ import hostel2 from "../assets/hostel2.png";
 import hostel3 from "../assets/hostel3.png";
 import hostel4 from "../assets/hostel4.png";
 import hostel5 from "../assets/hostel5.png";
+import college1 from "../assets/college1.png";
 import college2 from "../assets/college2.png";
+import college4 from "../assets/college4.png";
 import college3 from "../assets/college3.png";
 import college5 from "../assets/college5.png";
 import receipe1 from "../assets/receipe 1.png";
@@ -35,19 +37,48 @@ export const projects = [
     ],
     images: [hostel1, hostel2, hostel3, hostel4, hostel5],
     data: [
-      { title: "Room Allocation", features: ["Manage room availability and assignments.", "Real-time updates for check-ins and check-outs."] },
-      { title: "Maintenance Requests", features: ["Submit and track maintenance issues.", "Task management for staff."] },
-      { title: "Billing", features: ["Calculate charges, manage invoices, and track payments."] },
-      { title: "Resident Management", features: ["Store and update resident profiles and records."] },
-      { title: "Financial Reporting", features: ["Generate and analyze revenue and expenses with charts."] },
-      { title: "User Roles", features: ["Define roles and permissions for users."] },
-      { title: "Notifications", features: ["Send alerts for events and updates via email."] },
+      {
+        title: "Room Allocation",
+        features: [
+          "Manage room availability and assignments.",
+          "Real-time updates for check-ins and check-outs.",
+        ],
+      },
+      {
+        title: "Maintenance Requests",
+        features: [
+          "Submit and track maintenance issues.",
+          "Task management for staff.",
+        ],
+      },
+      {
+        title: "Billing",
+        features: ["Calculate charges, manage invoices, and track payments."],
+      },
+      {
+        title: "Resident Management",
+        features: ["Store and update resident profiles and records."],
+      },
+      {
+        title: "Financial Reporting",
+        features: ["Generate and analyze revenue and expenses with charts."],
+      },
+      {
+        title: "User Roles",
+        features: ["Define roles and permissions for users."],
+      },
+      {
+        title: "Notifications",
+        features: ["Send alerts for events and updates via email."],
+      },
     ],
   },
   {
     title: "Placement Management System",
-    frontEndCodeUrl: "https://github.com/ajardeen/College-Placement-Management-FrontEnd",
-    backEndCodeUrl: "https://github.com/ajardeen/College-Placement-Management-Backend",
+    frontEndCodeUrl:
+      "https://github.com/ajardeen/College-Placement-Management-FrontEnd",
+    backEndCodeUrl:
+      "https://github.com/ajardeen/College-Placement-Management-Backend",
     demoUrl: "https://college-placement-system-ajar.netlify.app/home",
     desc: "A platform to streamline college placements, handling student applications, interview scheduling, company coordination, and detailed reporting. Built with MERN stack and TailwindCSS, it integrates tools like Zoom API for seamless functionality.",
     techStacks: [
@@ -60,15 +91,38 @@ export const projects = [
       "Framer Motion",
       "Axios",
     ],
-    images: [ college2, college3, college5],
+    images: [college1, college2, college3, college4, college5],
     data: [
-      { title: "Application Management", features: ["Submit applications and track statuses."] },
-      { title: "Interview Scheduling", features: ["Schedule and manage interviews with notifications."] },
-      { title: "Company Coordination", features: ["Post job openings, review applications, and make hiring decisions."] },
-      { title: "Placement Drives", features: ["Organize drives and track participation."] },
-      { title: "Recruitment Tracking", features: ["Analyze metrics and generate detailed reports."] },
-      { title: "Academic Integration", features: ["Sync academic records for accurate data."] },
-      { title: "Reports", features: ["Detailed activity reports and graphical insights."] },
+      {
+        title: "Application Management",
+        features: ["Submit applications and track statuses."],
+      },
+      {
+        title: "Interview Scheduling",
+        features: ["Schedule and manage interviews with notifications."],
+      },
+      {
+        title: "Company Coordination",
+        features: [
+          "Post job openings, review applications, and make hiring decisions.",
+        ],
+      },
+      {
+        title: "Placement Drives",
+        features: ["Organize drives and track participation."],
+      },
+      {
+        title: "Recruitment Tracking",
+        features: ["Analyze metrics and generate detailed reports."],
+      },
+      {
+        title: "Academic Integration",
+        features: ["Sync academic records for accurate data."],
+      },
+      {
+        title: "Reports",
+        features: ["Detailed activity reports and graphical insights."],
+      },
     ],
   },
   {
@@ -82,24 +136,55 @@ export const projects = [
       "Redux",
       "TailwindCSS",
       "Spoonacular API",
-      "Axios"
+      "Axios",
     ],
-    images: [receipe1,receipe2,receipe3], // Add actual image variables or URLs
+    images: [receipe1, receipe2, receipe3], // Add actual image variables or URLs
     data: [
-      { title: "Recipe Collection", features: ["Display a variety of recipes with images, titles, and brief descriptions."] },
-      { title: "Search Functionality", features: ["Search recipes by keywords, ingredients, or specific criteria (e.g., vegetarian, gluten-free)."] },
-      { title: "Recipe Details", features: ["View ingredients, step-by-step instructions, preparation time, and serving size."] },
-      { title: "Favorites", features: ["Mark recipes as favorites and save them for easy access later."] },
-      { title: "Filters", features: ["Filter recipes based on meal types (breakfast, lunch, dinner) and dietary restrictions."] },
-      { title: "API Integration", features: ["Fetch recipe data dynamically using the Spoonacular API."] },
-      { title: "State Management", features: ["Utilize ReactJS and Redux for efficient state management."] }
-    ]
+      {
+        title: "Recipe Collection",
+        features: [
+          "Display a variety of recipes with images, titles, and brief descriptions.",
+        ],
+      },
+      {
+        title: "Search Functionality",
+        features: [
+          "Search recipes by keywords, ingredients, or specific criteria (e.g., vegetarian, gluten-free).",
+        ],
+      },
+      {
+        title: "Recipe Details",
+        features: [
+          "View ingredients, step-by-step instructions, preparation time, and serving size.",
+        ],
+      },
+      {
+        title: "Favorites",
+        features: [
+          "Mark recipes as favorites and save them for easy access later.",
+        ],
+      },
+      {
+        title: "Filters",
+        features: [
+          "Filter recipes based on meal types (breakfast, lunch, dinner) and dietary restrictions.",
+        ],
+      },
+      {
+        title: "API Integration",
+        features: ["Fetch recipe data dynamically using the Spoonacular API."],
+      },
+      {
+        title: "State Management",
+        features: ["Utilize ReactJS and Redux for efficient state management."],
+      },
+    ],
   },
   {
     title: "Password Reset Flow",
-    frontEndCodeUrl: "",
-    backEndCodeUrl: "",
-    demoUrl: "",
+    frontEndCodeUrl: "https://github.com/ajardeen/PasswordResetFlow-frontend",
+    backEndCodeUrl: "https://github.com/ajardeen/PasswordResetFlow-backend",
+    demoUrl: "https://password-resetflow-ajar.netlify.app/",
     desc: "A secure and efficient password reset system using Nodemailer for email verification. This project ensures users can reset their passwords only after verifying their identity through a unique reset link sent via email.",
     techStacks: [
       "React.js",
@@ -107,18 +192,57 @@ export const projects = [
       "Express.js",
       "MongoDB",
       "Nodemailer",
-      "jwt"
+      "jwt",
     ],
-    images: [password1,password2], // Add actual image variables or URLs
+    images: [password1, password2], // Add actual image variables or URLs
     data: [
-      { title: "Forgot Password Flow", features: ["Users enter their email to request a password reset.", "Checks if the user exists in the database."] },
-      { title: "Email Verification", features: ["Generates a unique reset token and sends a secure reset link via email.", "Uses Nodemailer for email handling."] },
-      { title: "Token Storage & Validation", features: ["Stores the token in the database for verification.", "Ensures tokens expire for security purposes."] },
-      { title: "Secure Password Reset", features: ["Users reset their password after clicking the link.", "Validates the token before updating the password."] },
-      { title: "Security Measures", features: ["Tokens have expiration times to prevent misuse.", "Prevents unauthorized password resets."] },
-      { title: "Environment Configuration", features: ["Uses environment variables for email configurations.", "Keeps credentials secure."] },
-      { title: "Project Setup & Deployment", features: ["Step-by-step instructions for setup and running locally."] }
-    ]
+      {
+        title: "Forgot Password Flow",
+        features: [
+          "Users enter their email to request a password reset.",
+          "Checks if the user exists in the database.",
+        ],
+      },
+      {
+        title: "Email Verification",
+        features: [
+          "Generates a unique reset token and sends a secure reset link via email.",
+          "Uses Nodemailer for email handling.",
+        ],
+      },
+      {
+        title: "Token Storage & Validation",
+        features: [
+          "Stores the token in the database for verification.",
+          "Ensures tokens expire for security purposes.",
+        ],
+      },
+      {
+        title: "Secure Password Reset",
+        features: [
+          "Users reset their password after clicking the link.",
+          "Validates the token before updating the password.",
+        ],
+      },
+      {
+        title: "Security Measures",
+        features: [
+          "Tokens have expiration times to prevent misuse.",
+          "Prevents unauthorized password resets.",
+        ],
+      },
+      {
+        title: "Environment Configuration",
+        features: [
+          "Uses environment variables for email configurations.",
+          "Keeps credentials secure.",
+        ],
+      },
+      {
+        title: "Project Setup & Deployment",
+        features: ["Step-by-step instructions for setup and running locally."],
+      },
+    ],
   },
   {
     title: "Trabook Landing Page",
@@ -126,17 +250,44 @@ export const projects = [
     backEndCodeUrl: "",
     demoUrl: "https://trabook-landingpage-ajar.netlify.app/",
     desc: "A fully responsive landing page built using HTML and Tailwind CSS. The design is implemented as per the provided Figma file, ensuring pixel-perfect accuracy and adaptability across all devices.",
-    techStacks: [
-      "HTML",
-      "TailwindCSS"
-    ],
-    images: [landing1,landing2,landing3,landing4,landing5], // Replace with actual images
+    techStacks: ["HTML", "TailwindCSS"],
+    images: [landing1, landing2, landing3, landing4, landing5], // Replace with actual images
     data: [
-      { title: "Pixel-Perfect Design", features: ["Follows the provided Figma design accurately.", "Maintains a clean and modern layout."] },
-      { title: "Fully Responsive", features: ["Optimized for desktops, tablets, and mobile devices.", "Uses Tailwind's responsive utilities."] },
-      { title: "Fast & Lightweight", features: ["Built with pure HTML and Tailwind CSS for performance.", "Ensures smooth and fast loading."] },
-      { title: "Scalable & Maintainable", features: ["Uses Tailwind's utility-first approach.", "Easy to modify and extend."] },
-      { title: "Figma Reference", features: ["The design is based on the given Figma file.", "Ensures consistency with modern UI trends."] }
-    ]
-  }
+      {
+        title: "Pixel-Perfect Design",
+        features: [
+          "Follows the provided Figma design accurately.",
+          "Maintains a clean and modern layout.",
+        ],
+      },
+      {
+        title: "Fully Responsive",
+        features: [
+          "Optimized for desktops, tablets, and mobile devices.",
+          "Uses Tailwind's responsive utilities.",
+        ],
+      },
+      {
+        title: "Fast & Lightweight",
+        features: [
+          "Built with pure HTML and Tailwind CSS for performance.",
+          "Ensures smooth and fast loading.",
+        ],
+      },
+      {
+        title: "Scalable & Maintainable",
+        features: [
+          "Uses Tailwind's utility-first approach.",
+          "Easy to modify and extend.",
+        ],
+      },
+      {
+        title: "Figma Reference",
+        features: [
+          "The design is based on the given Figma file.",
+          "Ensures consistency with modern UI trends.",
+        ],
+      },
+    ],
+  },
 ];

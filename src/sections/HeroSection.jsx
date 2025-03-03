@@ -36,7 +36,7 @@ function HeroSection() {
 
   return (
     <section
-      className="relative px-4 sm:px-6 md:px-2  hero-section flex flex-wrap justify-center xl:flex-nowrap lg:h-[34rem]"
+      className="relative px-4 sm:px-6 md:px-2  hero-section flex flex-wrap justify-center xl:flex-nowrap lg:h-[34rem] overflow-hidden" 
       id="heroSection"
     >
       <motion.div
@@ -132,7 +132,7 @@ function HeroSection() {
           </div>
         </motion.div>
       </motion.div>
-      <div className="lg:w-[500px] lg:h-[600px] overflow-hidden">
+      <div className="lg:w-[500px] lg:h-[550px] overflow-hidden">
         <motion.div
           id="tilt div"
           whileHover={{
@@ -143,7 +143,7 @@ function HeroSection() {
           }}
           style={{ perspective: 1000 }}
         >
-          <span className="relative overflow-hidden">
+          <span className="relative overflow-hidden"> 
             <motion.img
               className="w-full h-full object-cover"
               src={profile}

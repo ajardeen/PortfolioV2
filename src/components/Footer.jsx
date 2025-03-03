@@ -15,7 +15,7 @@ const Footer = () => {
                    Linkedin <AiFillLinkedin size={30} />
                 </a>
             </div>
-            <p className="mt-4">&copy; {new Date().getFullYear()} Mohamed Ajardeen . All rights reserved.</p>
+            <p className="mt-4 text-xs ">&copy; {new Date().getFullYear()} Mohamed Ajardeen . All rights reserved.</p>
         </footer>
     );
 };

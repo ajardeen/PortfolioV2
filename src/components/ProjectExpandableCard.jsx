@@ -81,11 +81,12 @@ function ProjectExpandableCard({
           />
 
           {/* Top-right icons */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="absolute top-2 right-2 flex space-x-2 z-20">
+            className="absolute top-2 right-2 flex space-x-2 z-20"
+          >
             <div className="relative">
               <button
                 className="text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70"
@@ -95,27 +96,27 @@ function ProjectExpandableCard({
               </button>
               {showGithubLinks && (
                 <div className="absolute right-0 mt-2 w-32 bg-black bg-opacity-90 rounded-lg shadow-lg">
-                {frontEndCodeUrl && (
-                  <a
-                    href={frontEndCodeUrl}
-                    target="_blank"
-                    className="block px-4 py-2 text-sm text-white hover:bg-slate-700"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Frontend Code
-                  </a>
-                )}
-                {backEndCodeUrl && (
-                  <a
-                    href={backEndCodeUrl}
-                    target="_blank"
-                    className="block px-4 py-2 text-sm text-white hover:bg-slate-700"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Backend Code
-                  </a>
-                )}
-              </div>
+                  {frontEndCodeUrl && (
+                    <a
+                      href={frontEndCodeUrl}
+                      target="_blank"
+                      className="block px-4 py-2 text-sm text-white hover:bg-slate-700"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Frontend Code
+                    </a>
+                  )}
+                  {backEndCodeUrl && (
+                    <a
+                      href={backEndCodeUrl}
+                      target="_blank"
+                      className="block px-4 py-2 text-sm text-white hover:bg-slate-700"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Backend Code
+                    </a>
+                  )}
+                </div>
               )}
             </div>
             <a
@@ -137,21 +138,21 @@ function ProjectExpandableCard({
             {hide && (
               <>
                 <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                onClick={prevImage}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  onClick={prevImage}
                   className="bg-gradient-to-r from-black/40 to-transparent hover:bg-gradient-to-r hover:from-black/70    hover:bg-opacity-70 flex items-center justify-center w-14 h-full"
                 >
                   <AiOutlineLeft size={25} />
                 </motion.button>
                 <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   onClick={nextImage}
                   className="bg-gradient-to-l from-black/40  to-transparent hover:bg-gradient-to-l hover:from-black/70  flex items-center justify-center w-14 h-full"
                 >
-                  <AiOutlineRight size={25}  />
+                  <AiOutlineRight size={25} />
                 </motion.button>
               </>
             )}
@@ -159,10 +160,8 @@ function ProjectExpandableCard({
 
           {/* Title */}
           {!isOpen && (
-            <motion.span
-              className="absolute bottom-0 left-0 text-white bold w-full"
-            >
-              <ProjectOverlayText text={title}/>
+            <motion.span className="absolute bottom-0 left-0 text-white bold w-full">
+              <ProjectOverlayText text={title} />
             </motion.span>
           )}
         </div>
@@ -174,7 +173,7 @@ function ProjectExpandableCard({
             animate={{ opacity: 1 }}
             className="mt-4 text-white"
           >
-            <p className="text-sm md:text-base mb-2 line-clamp-2">{desc}</p>
+            <p className="text-sm md:text-sm mb-2 line-clamp-2">{desc}</p>
             <div className="flex flex-wrap gap-2">
               {techStacks.map((tech, index) => (
                 <span
@@ -199,7 +198,7 @@ function ProjectExpandableCard({
             style={{ height: "fit-content" }}
           >
             <h1 className="bg-black text-white p-2 md:p-4 text-xl md:text-3xl underline underline-offset-8">
-            {title}
+              {title}
             </h1>
             <h1 className="bg-black text-white p-2 md:p-4 text-xl md:text-2xl">
               Project Description
