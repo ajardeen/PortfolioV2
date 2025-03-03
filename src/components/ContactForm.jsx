@@ -5,9 +5,11 @@ import { MdOutlineMarkEmailRead } from "react-icons/md";
 export default function ContactForm() {
   const [result, setResult] = React.useState("");
   const [showPopup, setShowPopup] = React.useState(false);
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true);
     setResult("Sending...");
     const formData = new FormData(event.target);
 
@@ -20,6 +22,7 @@ export default function ContactForm() {
 
     const data = await response.json();
 
+    setIsSubmitting(false);
     if (data.success) {
       setResult("Thank you! I'm so glad you reached out to me!");
       setShowPopup(true);
@@ -96,11 +99,19 @@ export default function ContactForm() {
         </motion.div>
         <motion.button
           type="submit"
-          className="w-full py-3 bg-black text-white font-bold rounded-md hover:bg-gray-800 transition duration-300"
+          className="w-full py-3 bg-black text-white font-bold rounded-md hover:bg-gray-800 transition duration-300 flex justify-center items-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          disabled={isSubmitting}
         >
-          Submit Form
+          {isSubmitting ? (
+            <svg
+              className="animate-spin h-5 w-5 mr-3 border-2 border-white border-t-transparent rounded-full"
+              viewBox="0 0 24 24"
+            ></svg>
+          ) : (
+            "Submit Form"
+          )}
         </motion.button>
       </form>
 
@@ -112,7 +123,7 @@ export default function ContactForm() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 200 }}
             transition={{ duration: 0.3 }}
-            className="fixed flex justify-start items-center gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-4 sm:p-6   text-xs lg:text-lg"
+            className="fixed flex justify-start items-center gap-2 top-4 right-4 bg-white text-black rounded-lg shadow-lg p-4 sm:p-6 text-xs lg:text-lg"
           >
             <motion.span
               initial={{ opacity: 0, x: 200 }}

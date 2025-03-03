@@ -95,6 +95,7 @@ function ProjectExpandableCard({
               </button>
               {showGithubLinks && (
                 <div className="absolute right-0 mt-2 w-32 bg-black bg-opacity-90 rounded-lg shadow-lg">
+                {frontEndCodeUrl && (
                   <a
                     href={frontEndCodeUrl}
                     target="_blank"
@@ -103,6 +104,8 @@ function ProjectExpandableCard({
                   >
                     Frontend Code
                   </a>
+                )}
+                {backEndCodeUrl && (
                   <a
                     href={backEndCodeUrl}
                     target="_blank"
@@ -111,7 +114,8 @@ function ProjectExpandableCard({
                   >
                     Backend Code
                   </a>
-                </div>
+                )}
+              </div>
               )}
             </div>
             <a

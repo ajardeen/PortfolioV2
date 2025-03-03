@@ -38,19 +38,19 @@ function ProjectsSection() {
           <ShinnyLine />
         </div>
     
- <div className="flex flex-wrap gap-10 justify-center">
+ <div className="flex flex-wrap gap-x-10 gap-y-2 justify-center">
 
       {/* Dynamically Render Projects */}
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={controls}
           variants={{
-            visible: { opacity: 1, transition: { duration: 1, delay: 0.2 } },
+            visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.2 } },
           }}
           onViewportEnter={handleReveal}
-          className=" flex justify-around items-center gap-4 my-10"
+          className=" flex justify-around items-center gap-4 my-3"
         >
           {reveal && index === 0 && ( // Show arrow only for the first project
             <motion.span
@@ -60,7 +60,7 @@ function ProjectsSection() {
               exit={{ opacity: 0 }}
               className="absolute top-20 left-[10rem] hidden lg:flex flex-col items-center justify-center"
             >
-              <h2 className="font-extrabold">tap to expand me</h2>
+              <h2 className="font-extrabold">tap to expand</h2>
               <video src={arrow} autoPlay muted className="rotate-45 size-28" />
             </motion.span>
           )}

@@ -16,7 +16,7 @@ import { SiTailwindcss, SiMysql, SiPython, SiRedux } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import ShinnyLine from "../components/ShinnyLine";
 
-const size = 50;
+const size = window.innerWidth <= 768 ? 20 : 50;
 function SkillsSection() {
   const skills = [
     { name: "React", icon: <DiReact size={size} /> },
@@ -53,7 +53,7 @@ function SkillsSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, staggerChildren: 0.1 }}
-          className="grid grid-cols-2 md:grid-cols-3  lg:grid-cols-6 gap-x-20 gap-y-3 text-base place-items-center"
+          className="grid grid-cols-3 md:grid-cols-4  lg:grid-cols-6 gap-x-16 gap-y-3 text-base place-items-center"
         >
           {skills.map((skill, index) => (
             <SkillCard

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import coffee from "../assets/latte-art.png";
-
+import { motion } from "framer-motion";
 function LocationCard() {
   const circleTextRef = useRef(null);
 
@@ -11,7 +11,7 @@ function LocationCard() {
     let angle = 0;
     const animate = () => {
       angle = (angle + 0.15) % 360;
-      element.style.setProperty('--rotation', `${angle}deg`);
+      element.style.setProperty("--rotation", `${angle}deg`);
       requestAnimationFrame(animate);
     };
 
@@ -19,27 +19,30 @@ function LocationCard() {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  
   const text = "curious & enthusiastic ";
   const characters = text.split("");
 
   return (
-    <div className="py-4 md:w-4/5  ">
-      <div className="flex items-center mt-4 ">
+    <motion.div className="py-4 md:w-4/5  overflow-hidden">
+      <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      className="flex items-center mt-4 ">
         <div className="relative md:p-6 m-2 md:m-1">
           <img className="size-10" src={coffee} alt="coffee icon" />
-          
-          <div 
+
+          <div
             ref={circleTextRef}
             className="circle-text absolute tracking-tighter"
             style={{
-              '--rotation': '0deg',
-              '--circle-size': '85px',
-              top: '50%',
-              left: '50%',
-              width: 'var(--circle-size)',
-              height: 'var(--circle-size)',
-              transform: 'translate(-50%, -50%) rotate(var(--rotation))',
+              "--rotation": "0deg",
+              "--circle-size": "85px",
+              top: "50%",
+              left: "50%",
+              width: "var(--circle-size)",
+              height: "var(--circle-size)",
+              transform: "translate(-50%, -50%) rotate(var(--rotation))",
             }}
           >
             <style jsx>{`
@@ -56,14 +59,11 @@ function LocationCard() {
                 letter-spacing: 0;
               }
             `}</style>
-            
+
             {characters.map((char, i) => {
               const angle = (i / characters.length) * 360;
               return (
-                <span 
-                  key={i} 
-                  style={{ transform: `rotate(${angle}deg)` }}
-                >
+                <span key={i} style={{ transform: `rotate(${angle}deg)` }}>
                   {char}
                 </span>
               );
@@ -71,15 +71,21 @@ function LocationCard() {
           </div>
         </div>
         <div className="flex items-center w-60 md:w-1/2 ml-6 md:ml-2">
-
-        <div className="border mx-2 h-14"></div>
-        <p className=" ml-2 text-[10px] md:text-[13px]  uppercase font-light tracking-wider">
-          Thiruvamiyur. Chennai. India <br /> Developing Websites for business
-        </p>
+          <div className="border mx-2 h-14"></div>
+          <p className=" ml-2 text-[10px] md:text-[13px]  uppercase font-light tracking-wider">
+            Thiruvamiyur. Chennai. India <br /> Developing Websites for business
+          </p>
         </div>
-      </div>
-      <hr className="mt-5 md:mt-1"/>
-    </div>
+      </motion.div>
+      <motion.span
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      transition={{ duration: 1, delay: 0.8 }}
+      className="inline-block"
+      >
+        <hr className="mt-5 md:mt-1" />
+      </motion.span>   
+       </motion.div>
   );
 }
 

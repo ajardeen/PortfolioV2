@@ -40,42 +40,58 @@ function HeroSection() {
       id="heroSection"
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-      
-        
-        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         className="relative flex flex-col justify-start items-start xl:justify-center xl:items-center py-1"
         layout
       >
-        <motion.div className="w-full md:w-[50rem] flex flex-col justify-start items-start my-5">
+        <motion.div className="w-full md:w-[50rem] flex flex-col md:justify-start items-start my-5">
           <LocationCard />
           <hr />
           <div className="hover-target border p-1 ">
             <div className="flex flex-shrink gap-3 justify-start ">
               <RevealText text={"Hello "} />
-             
             </div>
           </div>
 
           <div className="mt-5 w-full md:w-10/12 ">
-            <p className="text-gray-400 text-[10px] leading-4  md:text-base md:leading-7 text-left">
+            <motion.p
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{duration:0.5,delay:0.5}}
+              className="text-gray-400 text-[10px] leading-4  md:text-base md:leading-7 text-left"
+            >
               I'm a{" "}
-              <span className="font-semibold text-black  bg-slate-400 rounded-md p-0.5 mx-1">
+              <span className="font-bold  p-0.5 mx-1">
                 Certified Full-Stack Developer
               </span>{" "}
               from GUVI with hands-on experience in building dynamic and
               scalable web applications. I specialize in{" "}
-              <span className= "mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">React.js</span>,{" "}
-              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">Express.js</span>,
-              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">Node.js</span>,{" "}
-              and <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">MongoDB</span>,
-              crafting seamless user experiences with clean code and modern
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+                React.js
+              </span>
+              ,{" "}
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+                Express.js
+              </span>
+              ,
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+                Node.js
+              </span>
+              , and{" "}
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+                MongoDB
+              </span>
+              , crafting seamless user experiences with clean code and modern
               development practices.
-            </p>
+            </motion.p>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 mt-6">
+            <motion.div 
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex items-center gap-4 mt-6">
               <a
                 href="https://github.com/ajardeen"
                 target="_blank"
@@ -98,17 +114,17 @@ function HeroSection() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 whileHover={{ scale: 1 }}
                 whileTap={{ scale: 0.9 }}
-                className="border-b rounded-xl px-4 py-2 flex justify-center items-center gap-2 text-sm md:text-base"
+                className="border-b  px-4 py-2 flex justify-center items-center gap-2 text-sm md:text-base"
               >
                 <GoCopy /> Email
               </motion.button>
-            </div>
+            </motion.div>
 
             <div className="flex items-center justify-start py-6">
               <motion.span
-                initial={{ opacity: 0, y: -100 }}
+                initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+                transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <ShinyButton />
               </motion.span>
@@ -117,13 +133,13 @@ function HeroSection() {
         </motion.div>
       </motion.div>
       <div className="lg:w-[500px] lg:h-[600px] overflow-hidden">
-        <motion.div 
+        <motion.div
           id="tilt div"
-          whileHover={{ 
+          whileHover={{
             scale: 1.05,
             rotateX: 10,
             rotateY: 5,
-            transition: { duration: 0.3 }
+            transition: { duration: 0.3 },
           }}
           style={{ perspective: 1000 }}
         >
