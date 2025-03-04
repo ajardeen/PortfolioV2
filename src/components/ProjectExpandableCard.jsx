@@ -45,7 +45,7 @@ function ProjectExpandableCard({
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black backdrop-blur-sm bg-opacity-50 z-40"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
@@ -53,7 +53,7 @@ function ProjectExpandableCard({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={() => setIsOpen(!isOpen)}
-        className={`p-4 cursor-pointer bg-black border border-black hover:border-slate-300 overflow-y-scroll rounded-lg no-scrollbar 
+        className={`p-4 cursor-pointer bg-black/50  border border-black hover:border-slate-300 overflow-y-scroll rounded-lg no-scrollbar 
           ${
             isOpen
               ? "fixed z-50 h-[90vh] top-4 left-4 right-4 md:top-20 md:left-[20vw] md:right-[20vw] lg:left-[25vw] lg:right-[25vw]"
@@ -72,12 +72,13 @@ function ProjectExpandableCard({
             key={currentImageIndex}
             src={images[currentImageIndex]}
             alt={`project image ${currentImageIndex}`}
-            className={`w-full object-cover rounded-lg ${
+            className={`w-full object-cover  rounded-lg ${
               isOpen ? "h-[23vh] lg:h-[51vh]" : "h-[30vh]"
             }`}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             layout
+            loading="lazy"
           />
 
           {/* Top-right icons */}
@@ -171,19 +172,32 @@ function ProjectExpandableCard({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mt-4 text-white"
+            className="mt-8 text-white "
           >
-            <p className="text-sm md:text-sm mb-2 line-clamp-2">{desc}</p>
-            <div className="flex flex-wrap gap-2">
+           <motion.span
+           initial={{width:0}}
+           whileInView={{width:"100%"}}
+           transition={{duration:0.5,delay:0.5}}
+           className="block"> <hr /></motion.span>
+            <motion.p 
+            initial={{opacity:0,y:100}}
+            whileInView={{opacity:1,y:0}}
+            transition={{duration:0.5,delay:0.5}}
+            className="text-xs mb-2 line-clamp-2 mt-3 ml-2 uppercase">{desc}</motion.p>
+            <motion.div 
+             initial={{opacity:0,y:100}}
+             whileInView={{opacity:1,y:0}}
+             transition={{duration:0.5,delay:0.8}}
+            className="flex flex-wrap gap-2 py-4">
               {techStacks.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 text-xs md:text-sm bg-slate-800 rounded-full text-slate-300 hover:bg-slate-700 transition-colors"
+                  className="px-3 py-1 text-xs md:text-xs bg-slate-800 rounded-full text-slate-300 hover:bg-slate-700 transition-colors"
                 >
                   {tech}
                 </span>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         )}
 
@@ -194,20 +208,20 @@ function ProjectExpandableCard({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-full bg-slate-500 mt-8"
+            className="w-full bg-black/10 bg-transparent mt-8"
             style={{ height: "fit-content" }}
           >
-            <h1 className="bg-black text-white p-2 md:p-4 text-xl md:text-3xl underline underline-offset-8">
+            <h1 className=" text-white p-2 md:p-4 text-xl md:text-3xl underline underline-offset-8">
               {title}
             </h1>
-            <h1 className="bg-black text-white p-2 md:p-4 text-xl md:text-2xl">
+            <h1 className=" text-white p-2 md:p-4 text-xl md:text-2xl">
               Project Description
             </h1>
-            <p className="bg-black text-white p-2 md:p-4 text-sm md:text-base">
+            <p className=" text-white p-2 md:p-4 text-sm md:text-base">
               {desc}
             </p>
             {data.map((item, index) => (
-              <div key={index} className="p-2 md:p-4 bg-black">
+              <div key={index} className="p-2 md:p-4 ">
                 <h2 className="font-bold">{item.title}</h2>
                 {item.features.map((feature, idx) => (
                   <div key={idx} className="text-sm md:text-base flex">
@@ -216,10 +230,10 @@ function ProjectExpandableCard({
                 ))}
               </div>
             ))}
-            <h1 className="bg-black text-white p-2 md:p-4 text-xl md:text-2xl">
+            <h1 className=" text-white p-2 md:p-4 text-xl md:text-2xl">
               Tech Stack
             </h1>
-            <div className="bg-black text-white p-2 md:p-4 flex flex-wrap gap-2">
+            <div className=" text-white p-2 md:p-4 flex flex-wrap gap-2">
               {techStacks.map((tech, index) => (
                 <span
                   key={index}
