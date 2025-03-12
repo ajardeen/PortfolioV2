@@ -36,7 +36,7 @@ function HeroSection() {
 
   return (
     <section
-      className="relative px-4 sm:px-6 md:px-2  hero-section flex flex-wrap justify-center xl:flex-nowrap lg:h-[34rem] overflow-hidden" 
+      className="relative px-4 sm:px-6 md:px-2  hero-section flex flex-wrap justify-center items-center xl:flex-nowrap lg:h-[34rem] overflow-hidden" 
       id="heroSection"
     >
       <motion.div
@@ -50,36 +50,39 @@ function HeroSection() {
           <hr />
           <div className="hover-target border p-1 ">
             <div className="flex flex-shrink gap-3 justify-start ">
-              <RevealText text={"Hello "} />
+              <RevealText text={"Hello"} /> 
             </div>
+            
           </div>
+          
 
           <div className="mt-5 w-full md:w-10/12 ">
             <motion.p
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{duration:0.5,delay:0.5}}
-              className="text-gray-400 text-[10px] leading-4  md:text-base md:leading-7 text-left"
+              className="text-gray-400 hover-target text-[10px] leading-4  md:text-base md:leading-7 text-left"
             >
-              I'm a{" "}
+              
+              I'm  Mohamed Ajardeen
               <span className="font-bold  p-0.5 mx-1">
                 Certified Full-Stack Developer
               </span>{" "}
               from GUVI with hands-on experience in building dynamic and
               scalable web applications. I specialize in{" "}
-              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md px-0.5 ">
                 React.js
               </span>
               ,{" "}
-              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md px-0.5 ">
                 Express.js
               </span>
               ,
-              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md px-0.5 ">
                 Node.js
               </span>
               , and{" "}
-              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md p-0.5 ">
+              <span className="mx-1 font-semibold text-black  bg-slate-400 rounded-md px-0.5 ">
                 MongoDB
               </span>
               , crafting seamless user experiences with clean code and modern
@@ -132,7 +135,7 @@ function HeroSection() {
           </div>
         </motion.div>
       </motion.div>
-      <div className="lg:w-[500px] lg:h-[550px] overflow-hidden">
+      <div className="relative w-[310px] h-[310px] lg:w-[500px] lg:h-[510px] overflow-hidden rounded-xl">
         <motion.div
           id="tilt div"
           whileHover={{
@@ -143,22 +146,21 @@ function HeroSection() {
           }}
           style={{ perspective: 1000 }}
         >
-          <span className="relative overflow-hidden"> 
+          <span className=""> 
             <motion.img
-              className="w-full h-full object-cover"
+              className="w-[inherit] object-cover"
               src={profile}
               alt="profile"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
-            <div className="absolute bottom-0 w-full">
+            <div className="absolute -bottom-3 sm:bottom-5 lg:bottom-5 w-full z-10">
               {" "}
               <OverlayText text={"Mohamed Ajardeen"} />
             </div>
           </span>
         </motion.div>
-      </div>
-      {/* Pop-up Notification */}
+      </div>      {/* Pop-up Notification */}
       <AnimatePresence>
         {showPopup && (
           <motion.div

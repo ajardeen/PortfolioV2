@@ -25,7 +25,7 @@ function ProjectsSection() {
   }, [controls]);
 
   return (
-    <section className="relative flex flex-col gap-4 p-4" id="work">
+    <section className="relative flex flex-col gap-4 p-4 overflow-hidden" id="work">
       {/* skill div  */}
       <div className="flex gap-10 justify-center items-center">
           <span className="rotate-180">
@@ -58,7 +58,7 @@ function ProjectsSection() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute top-20 left-[10rem] hidden lg:flex flex-col items-center justify-center"
+              className="absolute top-20 left-[10rem] hidden lg:flex flex-col items-center justify-center z-10"
             >
               <h2 className="font-extrabold">tap to expand</h2>
               <video src={arrow} autoPlay muted className="rotate-45 size-28" />
@@ -75,6 +75,7 @@ function ProjectsSection() {
             frontEndCodeUrl={project.frontEndCodeUrl}
             backEndCodeUrl={project.backEndCodeUrl}
             demoUrl={project.demoUrl}
+            video={project.video.length > 0 ? project.video : null}
           />
 
           {/* Description and Tech Stack
@@ -85,8 +86,7 @@ function ProjectsSection() {
             demoUrl={project.demoUrl}
           /> */}
         </motion.div>
-      ))}
- </div>
+      ))} </div>
     </section>
   );
 }

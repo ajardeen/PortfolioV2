@@ -11,13 +11,15 @@ import college5 from "../assets/college5.png";
 import receipe1 from "../assets/receipe 1.png";
 import receipe2 from "../assets/receipe 2.png";
 import receipe3 from "../assets/receipe 3.jpeg";
-import password1 from "../assets/password1.svg";
+import password1 from "../assets/password1.png";
 import password2 from "../assets/password2.png";
 import landing1 from "../assets/landing1.png";
 import landing2 from "../assets/landing2.png";
 import landing3 from "../assets/landing3.png";
 import landing4 from "../assets/landing4.png";
 import landing5 from "../assets/landing5.png";
+import chat1 from "../assets/chat-bubble.jpg";
+import chatvideo from "../assets/Chat-application-demo.mp4";
 
 export const projects = [
   {
@@ -36,6 +38,7 @@ export const projects = [
       "Axios",
     ],
     images: [hostel1, hostel2, hostel3, hostel4, hostel5],
+    video: [],
     data: [
       {
         title: "Room Allocation",
@@ -92,6 +95,7 @@ export const projects = [
       "Axios",
     ],
     images: [college1, college2, college3, college4, college5],
+    video: [],
     data: [
       {
         title: "Application Management",
@@ -126,6 +130,69 @@ export const projects = [
     ],
   },
   {
+    title: "RealTime Chat Application",
+    frontEndCodeUrl: "https://github.com/ajardeen/ChatApplicationFrontend",
+    backEndCodeUrl: "https://github.com/ajardeen/ChatApplicationBackend",
+    demoUrl: "https://chatapplication-ajardeen.netlify.app/",
+    desc: "A real-time one-on-one chat application featuring user authentication, instant messaging, message status updates, and a responsive UI. Built with Socket.IO for real-time communication and JWT for secure authentication.",
+    techStacks: [
+      "React.js",
+      "Inline Styling CSS",
+      "Express.js",
+      "MongoDB",
+      "Socket.IO",
+      "Material UI",
+      "Formik",
+      "JWT",
+      "Node.js",
+      "Axios",
+    ],
+    images: [chat1],
+    video: [chatvideo],
+    data: [
+      {
+        title: "Real-Time Messaging",
+        features: [
+          "Instant messaging with WebSocket (Socket.IO).",
+          "Delivered, seen, and typing indicators.",
+        ],
+      },
+      {
+        title: "User Authentication",
+        features: [
+          "JWT-based authentication for secure login.",
+          "Google OAuth integration.",
+        ],
+      },
+      {
+        title: "User Search",
+        features: ["Search and start conversations with registered users."],
+      },
+      {
+        title: "Message Storage",
+        features: [
+          "Store chat history securely in MongoDB.",
+          "Load previous messages on re-login.",
+        ],
+      },
+      {
+        title: "Mobile Responsive UI",
+        features: [
+          "Adaptive layout for desktop and mobile.",
+          "Collapsible chat list for small screens.",
+        ],
+      },
+      {
+        title: "Logout & Session Handling",
+        features: [
+          "Secure logout functionality.",
+          "Automatic session expiration for inactive users.",
+        ],
+      },
+    ],
+  },
+
+  {
     title: "Recipe App",
     frontEndCodeUrl: "https://github.com/ajardeen/recipe-app",
     backEndCodeUrl: "",
@@ -139,6 +206,7 @@ export const projects = [
       "Axios",
     ],
     images: [receipe1, receipe2, receipe3], // Add actual image variables or URLs
+    video: [],
     data: [
       {
         title: "Recipe Collection",
@@ -195,6 +263,7 @@ export const projects = [
       "jwt",
     ],
     images: [password1, password2], // Add actual image variables or URLs
+    video: [],
     data: [
       {
         title: "Forgot Password Flow",
@@ -252,6 +321,7 @@ export const projects = [
     desc: "A fully responsive landing page built using HTML and Tailwind CSS. The design is implemented as per the provided Figma file, ensuring pixel-perfect accuracy and adaptability across all devices.",
     techStacks: ["HTML", "TailwindCSS"],
     images: [landing1, landing2, landing3, landing4, landing5], // Replace with actual images
+    video: [],
     data: [
       {
         title: "Pixel-Perfect Design",

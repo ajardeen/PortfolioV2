@@ -11,14 +11,14 @@ function FadeInText({ desc }) {
     <motion.div
       className="lg:w-[50%] flex flex-col gap-3"
       layout="position"
-      transition={{ duration: 1, type: "spring", stiffness: 100 }}
+      transition={{ duration: 1, type: "spring", stiffness: 300 }}
     >
   
       <motion.p
         initial="hidden"
         whileInView="reveal"
         viewport={{ once: true }}
-        transition={{ staggerChildren: 0.01 }}
+        transition={{ staggerChildren: 0.03 }}
         className="text-xs md:text-sm lg:text-base leading-5 opacity-80"
       >
         {characters.map((char, index) => (

@@ -45,7 +45,7 @@ function LocationCard() {
               transform: "translate(-50%, -50%) rotate(var(--rotation))",
             }}
           >
-            <style jsx>{`
+            <style>{`
               .circle-text span {
                 position: absolute;
                 left: 50%;

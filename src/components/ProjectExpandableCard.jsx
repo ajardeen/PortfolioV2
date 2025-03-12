@@ -13,6 +13,7 @@ function ProjectExpandableCard({
   frontEndCodeUrl,
   backEndCodeUrl,
   demoUrl,
+  video
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -21,13 +22,13 @@ function ProjectExpandableCard({
 
   const nextImage = (e) => {
     e.stopPropagation();
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % (images.length + (video ? 1 : 0)));
   };
 
   const prevImage = (e) => {
     e.stopPropagation();
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length + (video ? 0 : -1) : prevIndex - 1
     );
   };
 
@@ -39,6 +40,42 @@ function ProjectExpandableCard({
   const handleGithubClick = (e) => {
     e.stopPropagation();
     setShowGithubLinks(!showGithubLinks);
+  };
+
+  const renderMedia = () => {
+    if (currentImageIndex === images.length && video) {
+      return (
+        <motion.video
+          key="video"
+          autoPlay
+          muted
+          loop
+          className={`w-full object-cover rounded-lg ${
+            isOpen ? "h-[23vh] lg:h-[51vh]" : "h-[30vh]"
+          }`}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          layout
+        >
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </motion.video>
+      );
+    }
+    return (
+      <motion.img
+        key={currentImageIndex}
+        src={images[currentImageIndex]}
+        alt={`project image ${currentImageIndex}`}
+        className={`w-full object-cover rounded-lg ${
+          isOpen ? "h-[23vh] lg:h-[51vh]" : "h-[30vh]"
+        }`}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        layout
+        loading="lazy"
+      />
+    );
   };
 
   return (
@@ -68,18 +105,7 @@ function ProjectExpandableCard({
               : "relative h-[23vh] lg:h-[51vh] overflow-hidden"
           }
         >
-          <motion.img
-            key={currentImageIndex}
-            src={images[currentImageIndex]}
-            alt={`project image ${currentImageIndex}`}
-            className={`w-full object-cover  rounded-lg ${
-              isOpen ? "h-[23vh] lg:h-[51vh]" : "h-[30vh]"
-            }`}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            layout
-            loading="lazy"
-          />
+          {renderMedia()}
 
           {/* Top-right icons */}
           <motion.div
@@ -172,7 +198,7 @@ function ProjectExpandableCard({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mt-8 text-white "
+            className="mt-8 text-white overflow-hidden "
           >
            <motion.span
            initial={{width:0}}
@@ -180,19 +206,19 @@ function ProjectExpandableCard({
            transition={{duration:0.5,delay:0.5}}
            className="block"> <hr /></motion.span>
             <motion.p 
-            initial={{opacity:0,y:100}}
+            initial={{opacity:0,y:50}}
             whileInView={{opacity:1,y:0}}
             transition={{duration:0.5,delay:0.5}}
             className="text-xs mb-2 line-clamp-2 mt-3 ml-2 uppercase">{desc}</motion.p>
             <motion.div 
-             initial={{opacity:0,y:100}}
+             initial={{opacity:0,y:50}}
              whileInView={{opacity:1,y:0}}
              transition={{duration:0.5,delay:0.8}}
             className="flex flex-wrap gap-2 py-4">
               {techStacks.map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 text-xs md:text-xs bg-slate-800 rounded-full text-slate-300 hover:bg-slate-700 transition-colors"
+                  className="px-3 py-1 text-xs md:text-xs bg-slate-800 rounded-full text-slate-300 hover:bg-slate-700 transition-colors"  
                 >
                   {tech}
                 </span>
@@ -208,7 +234,7 @@ function ProjectExpandableCard({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-full bg-black/10 bg-transparent mt-8"
+            className="w-full bg-black/10 mt-8"
             style={{ height: "fit-content" }}
           >
             <h1 className=" text-white p-2 md:p-4 text-xl md:text-3xl underline underline-offset-8">
