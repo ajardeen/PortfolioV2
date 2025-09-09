@@ -58,8 +58,8 @@ function HeroSection() {
 
           <div className="mt-5 w-full md:w-10/12 ">
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, }}
+              animate={{ opacity: 1,}}
               transition={{duration:0.5,delay:0.2}}
               className="text-gray-400 hover-target text-[10px] leading-4  md:text-base md:leading-7 text-left"
             >
@@ -91,9 +91,9 @@ function HeroSection() {
 
             {/* Social Links */}
             <motion.div 
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="flex items-center gap-4 mt-6">
               <a
                 href="https://github.com/ajardeen"
@@ -113,7 +113,7 @@ function HeroSection() {
               </a>
               <motion.button
                 onClick={handleEmailClick}
-                initial={{ opacity: 0, y: -50 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 whileHover={{ scale: 1 }}
                 whileTap={{ scale: 0.9 }}
@@ -125,7 +125,7 @@ function HeroSection() {
 
             <div className="flex items-center justify-start py-6">
               <motion.span
-                initial={{ opacity: 0, y: 100 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
@@ -151,7 +151,7 @@ function HeroSection() {
               className="w-[inherit] object-cover"
               src={profile}
               alt="profile"
-              whileHover={{ scale: 1.05 }}
+              // whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
             <div className="absolute -bottom-3 sm:bottom-5 lg:bottom-5 w-full z-10">

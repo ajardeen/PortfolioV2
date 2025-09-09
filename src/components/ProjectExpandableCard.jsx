@@ -90,10 +90,10 @@ function ProjectExpandableCard({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={() => setIsOpen(!isOpen)}
-        className={`p-4 cursor-pointer bg-black/50  border border-black hover:border-slate-300 overflow-y-scroll rounded-lg no-scrollbar 
+        className={`p-4 cursor-pointer bg-black/50  border border-black hover:border-slate-300 overflow-y-hidden rounded-lg no-scrollbar 
           ${
             isOpen
-              ? "fixed z-50 h-[90vh] top-4 left-4 right-4 md:top-20 md:left-[20vw] md:right-[20vw] lg:left-[25vw] lg:right-[25vw]"
+              ? "fixed z-50 h-[90vh] top-4 left-4 right-4 md:top-20 md:left-[20vw] md:right-[20vw] lg:left-[25vw] lg:right-[25vw] overflow-y-scroll"
               : "w-[100vw] md:w-[45vw] lg:w-[30vw]"
           }`}
         layout

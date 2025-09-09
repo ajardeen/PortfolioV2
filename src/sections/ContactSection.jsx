@@ -22,9 +22,9 @@ function ContactSection() {
           <span>
             <motion.span
               className="inline-block"
-              initial={{ x: -30 }}
-              whileInView={{ x: 0 }}
-              transition={{ delay: 0.2,duration: 0.5 }}
+              // initial={{ x: -30 }}
+              // whileInView={{ x: 0 }}
+              // transition={{ delay: 0.2,duration: 0.5 }}
             >
               {"<"}
             </motion.span>

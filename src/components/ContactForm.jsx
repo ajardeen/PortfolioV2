@@ -36,8 +36,8 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, }}
+      whileInView={{ opacity: 1, }}
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center justify-center my-10 text-white px-4 sm:px-6 md:px-8 w-full max-w-lg mx-aut text-[9px] lg:text-base"
     >
