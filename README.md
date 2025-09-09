@@ -1,7 +1,7 @@
 # Portfolio Website
 
 ## Overview
-This is my personal portfolio website showcasing my projects, skills, and experience. The site is built using modern web technologies, ensuring a responsive and dynamic user experience.
+This is my personal portfolio website showcasing my projects, skills, and experience. The site is built using modern web technologies, ensuring a responsive for Mobile,Desktop devices and dynamic user experience.
 
 ## Features
 - **Fully Responsive**: Works seamlessly on mobile, tablet, laptop, and desktop screens.

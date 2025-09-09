@@ -204,16 +204,19 @@ function ProjectExpandableCard({
            initial={{width:0}}
            whileInView={{width:"100%"}}
            transition={{duration:0.5,delay:0.5}}
+           viewport={{once:true}}
            className="block"> <hr /></motion.span>
             <motion.p 
-            initial={{opacity:0,y:50}}
+            initial={{opacity:0,y:30}}
             whileInView={{opacity:1,y:0}}
             transition={{duration:0.5,delay:0.5}}
+            viewport={{once:true}}
             className="text-xs mb-2 line-clamp-2 mt-3 ml-2 uppercase">{desc}</motion.p>
             <motion.div 
-             initial={{opacity:0,y:50}}
+             initial={{opacity:0,y:30}}
              whileInView={{opacity:1,y:0}}
              transition={{duration:0.5,delay:0.8}}
+             viewport={{once:true}}
             className="flex flex-wrap gap-2 py-4">
               {techStacks.map((tech, index) => (
                 <span

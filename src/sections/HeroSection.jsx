@@ -22,7 +22,7 @@ function HeroSection() {
     }, 1000);
     setTimeout(() => {
       setReveal(false);
-    }, 30000);
+    }, 10000);
   }, []);
 
   const handleEmailClick = () => {
@@ -58,9 +58,9 @@ function HeroSection() {
 
           <div className="mt-5 w-full md:w-10/12 ">
             <motion.p
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{duration:0.5,delay:0.5}}
+              transition={{duration:0.5,delay:0.2}}
               className="text-gray-400 hover-target text-[10px] leading-4  md:text-base md:leading-7 text-left"
             >
               

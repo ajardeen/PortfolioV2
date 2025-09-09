@@ -55,6 +55,7 @@ function SkillsSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, staggerChildren: 0.1 }}
+          viewport={{once:true}}
           className="grid grid-cols-3 md:grid-cols-4  lg:grid-cols-6 gap-x-16 gap-y-3 text-base place-items-center"
         >
           {skills.map((skill, index) => (
