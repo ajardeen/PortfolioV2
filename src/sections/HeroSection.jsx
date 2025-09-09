@@ -15,6 +15,8 @@ import LocationCard from "../components/LocationCard";
 function HeroSection() {
   const [reveal, setReveal] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const email = "mnazar87540@gmail.com";
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -111,16 +113,17 @@ function HeroSection() {
               >
                 <FaLinkedin size={25} />
               </a>
-              <motion.button
+            <motion.a 
+                href={`mailto:${email}?subject=Inquiry from your Portfolio`} // Mailto link here
                 onClick={handleEmailClick}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 whileHover={{ scale: 1 }}
                 whileTap={{ scale: 0.9 }}
-                className="border-b  px-4 py-2 flex justify-center items-center gap-2 text-sm md:text-base"
+                className="border-b px-4 py-2 flex justify-center items-center gap-2 text-sm md:text-base"
               >
                 <GoCopy /> Email
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             <div className="flex items-center justify-start py-6">
